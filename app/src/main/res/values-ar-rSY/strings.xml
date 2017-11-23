@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">فقط جافا</string>
+    <string name="hint_name">الاسم</string>
+    <string name="toppings">الاضافات</string>
+    <string name="whipped_cream_checkBox">كريمة</string>
+    <string name="chocolate_checkBox">شوكولاة</string>
+    <string name="quantity_header">الكمية</string>
+    <string name="order">طلب</string>
+    <string name="increment_toast_message">لا يمكنك طلب اكثر من 100 فنجان من القهوة</string>
+    <string name="decrement_toast_message">لا يمكنك طلب اقل من فنجان واحد من القهوة</string>
+    <string name="email_subject">"فقط جافا: طلب من اجل "</string>
+    <string name="order_name_summary">الاسم: <xliff:g id="name" example="Amy">%s</xliff:g></string>
+    <string name="hasWhippedCream_summary">مع كريمة? <xliff:g id="addWhippedCream" example="True">%b</xliff:g></string>
+    <string name="hasChocolate_summary">مع شوكولاة? <xliff:g id="addChocolate" example="True">%b</xliff:g></string>
+    <string name="Quantity_summary">الكمية: <xliff:g id="quantity" example="2">%d</xliff:g></string>
+    <string name="Total_summary">السعر الاجمالي: <xliff:g id="price" example="10">%s</xliff:g></string>
+    <string name="thankYou_summary">شكرا جزيلا!</string>
+</resources>
