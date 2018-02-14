@@ -2,44 +2,27 @@ package com.example.android.justjava;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
 import android.support.v7.app.AppCompatActivity;
-
-import android.util.Log;
 import android.view.View;
-
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.text.NumberFormat;
 
 
-/**
-
- * This app displays an order form to order coffee.
-
- */
-
+ //This app displays an order form to order coffee.
 public class MainActivity extends AppCompatActivity {
-
     int quantity = 2;
 
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
     }
 
 
-
-    /**
-     * This method is called when the + button is clicked.
-     */
+    //This method is called when the + button is clicked.
     public void increment(View view) {
         if (quantity == 100) {
             Toast.makeText(this, getString(R.string.increment_toast_message), Toast.LENGTH_SHORT).show();
@@ -50,25 +33,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    /**
-     * This method is called when the - button is clicked.
-     */
+    //This method is called when the - button is clicked.
     public void decrement(View view) {
         if (quantity ==1) {
             Toast.makeText(this, getString(R.string.decrement_toast_message), Toast.LENGTH_SHORT) .show();
             return;
         }
-
         quantity -= 1;
         displayQuantity(quantity);
     }
 
 
-
-    /**
-     * This method is called when the order button is clicked.
-     */
+    //This method is called when the order button is clicked.
     public void submitOrder(View view) {
         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
         boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
@@ -80,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         String name = nameField.getText().toString();
 
         int price = calculatePrice(hasWhippedCream, hasChocolate);
-        String priceMessage = creatOrderSummary(price, hasWhippedCream, hasChocolate, name);
+        String priceMessage = createOrderSummary(price, hasWhippedCream, hasChocolate, name);
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
       intent.setData(Uri.parse("mailto:")); // only email apps should handle this
@@ -89,9 +65,7 @@ public class MainActivity extends AppCompatActivity {
       if (intent.resolveActivity(getPackageManager()) != null) {
     startActivity(intent);
   }
-
     }
-
 
 
     /**
@@ -120,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     /**
      * Creat summary of the order:
      *
@@ -129,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
      * @return text summary
      * @param name of the customer
      */
-    public String creatOrderSummary (int price, boolean addWhippedCream, boolean addChocolate, String name){
+    public String createOrderSummary (int price, boolean addWhippedCream, boolean addChocolate, String name){
         String priceMessage = getString(R.string.order_name_summary, name);
         priceMessage += "\n" + getString(R.string.hasWhippedCream_summary, addWhippedCream);
         priceMessage += "\n" + getString(R.string.hasChocolate_summary, addChocolate);
@@ -140,9 +113,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    /**
-     * This method displays the given quantity value on the screen.
-     */
+    //This method displays the given quantity value on the screen.
     private void displayQuantity(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + number);

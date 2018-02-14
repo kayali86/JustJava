@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -40,7 +40,8 @@
             android:id="@+id/whipped_cream_checkbox"
             android:layout_marginBottom="16dp"
             android:textSize="16sp"
-            android:paddingLeft="24dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
             android:text="@string/whipped_cream_checkBox"/>
 
         <CheckBox
@@ -48,7 +49,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/chocolate_checkbox"
             android:text="@string/chocolate_checkBox"
-            android:paddingLeft="24dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
             android:layout_marginBottom="16dp"
             android:textSize="16sp"/>
 
@@ -103,7 +105,6 @@
                 android:onClick="decrement"
                 android:text="-"
                 android:textAllCaps="true" />
-
         </LinearLayout>
 
         <Button
@@ -112,6 +113,5 @@
             android:onClick="submitOrder"
             android:text="@string/order"
             android:textAllCaps="true" />
-
     </LinearLayout>
 </ScrollView>
